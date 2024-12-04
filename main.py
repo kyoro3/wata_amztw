@@ -4,10 +4,11 @@ import tweepy
 import time
 import re
 import json
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
+from datetime import datetime
 import os
 
-load_dotenv(find_dotenv())
+load_dotenv()
 
 # 現在のディレクトリをスクリプトのディレクトリに変更
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -44,8 +45,9 @@ def check_stock_with_regex(target):
         return False
 
 def tweet(target):
+    current_date = datetime.now().strftime("%Y年%m月%d日%H時%M分")  
     response = client.create_tweet(
-        text=target['tweet_content'].format(product_name=target['product_name'])
+        text=target['tweet_content'].format(product_name=target['product_name'], date=current_date)
     )
 
 if __name__ == "__main__":
