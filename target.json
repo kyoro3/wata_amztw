@@ -2,7 +2,7 @@
     {
         "product_name": "在庫あり商品",
         "target_asin": "B0CGHM4664",
-        "tweet_content": "{product_name}が在庫復活！\n必需品だよ\n確認日時{date}"
+        "tweet_content": "{product_name}が在庫復活！\n必需品だよ\n確認日時：{date}"
     },
     {
         "product_name": "在庫なし商品",
